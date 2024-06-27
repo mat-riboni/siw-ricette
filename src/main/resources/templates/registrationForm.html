@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Registrati</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.20.10/dist/css/uikit.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" th:href="  @{/CSS/registrationForm.css}" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="left-logo"><span class="material-symbols-outlined">
+          ramen_dining
+          </span>
+          <div class="name">
+            Home Chef
+          </div>
+        </div>
+        <div class="logs">
+          <a href="/login">Login</a>
+          <button onclick="location.href='/'">Home</button>
+        </div>
+    </div>
+    <div class='form-container'>
+      <form class="form" th:action="@{/register}" method="post" enctype="multipart/form-data">
+        <h1>Diventa un cuoco!</h1>
+        <input class="uk-input" type="text" placeholder="Email" th:field ="${utente.email}"/>
+		<div th:if="${#fields.hasErrors('utente.email')}" class="error" th:errors="${utente.email}"></div>
+		
+        <input class="uk-input" type="text" placeholder="Nome" th:field="${utente.nome}"/>
+		<div th:if="${#fields.hasErrors('utente.nome')}" class="error" th:errors="${utente.nome}"></div>
+		
+        <input class="uk-input" type="text" placeholder="Cognome" th:field="${utente.cognome}"/>
+		<div th:if="${#fields.hasErrors('utente.cognome')}" class="error" th:errors="${utente.cognome}"></div>
+		
+        <input class="uk-input" type="text" placeholder="Username" th:field="${credentials.username}"/>
+		<div th:if="${#fields.hasErrors('credentials.username')}" class="error" th:errors="${credentials.username}"></div>
+		
+		<input class="uk-input" type="password" placeholder="Password" th:field="${credentials.password}"/>
+		<div th:if="${#fields.hasErrors('credentials.password')}" class="error" th:errors="${credentials.password}"></div>
+		
+        <button type="submit">Submit</button>
+		<p>Sei gia' un cuoco? <a href="/login">Login</a></p>
+      </form>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.10/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.20.10/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ricette</title>
+    <link rel="stylesheet" href="/CSS/nuovaRicettaForm.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+  </head>
+  <body>
+  <div class="container">
+    <div class="navbar">
+      <div class="left-logo"><span class="material-symbols-outlined">
+        ramen_dining
+        </span>
+        <div class="name">
+          Home Chef
+        </div>
+      </div>
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input">
+        <button class="search-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="search-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.35-6.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </button>
+    </div>
+      <div class="logs">
+        <a href="#">Ciao, Utente</a>
+        <button>Logout</button>
+      </div>
+    </div>
+    <div class="form-container">
+      <form class="form" th:action="@{/creaRicetta}" method="post" enctype="multipart/form-data">
+        <h4>Crea una nuova ricetta!</h4>
+        <input  type="text" placeholder="Nome Ricetta..." th:field ="${ricetta.nome}"/>
+        <input type="text" placeholder="Ingredienti... (sepati da una virgola)" th:field="${ingredienti}"/>
+        <textarea  placeholder="Procedimento..." th:field="${ricetta.descrizione}"></textarea>
+        <input type="text" placeholder="Tempo totale in minuti..." th:field="${ricetta.tempo}"/>
+        <div class="custom-file-upload">
+          <input type="file" id="fileInput" name="fotoRicetta" accept="image/*" multiple />
+          <label id="fileInputLabel" for="fileInput">Carica Foto</label>
+        </div>
+        
+        <button type="submit">Salva</button>
+      </form>
+      <div class="chef">
+        <img src="/images/chef_nuova_ricetta.png">
+      </div>
+    </div>
+
+  </div>
+  <script src="/script/nuovaRicettaForm.js"></script>
+  </body>
+</html>

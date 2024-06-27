@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ricette</title>
+    <link rel="stylesheet" 	th:href="@{/CSS/index.css}">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+  </head>
+  <body>
+  <div class="container">
+    <div class="navbar">
+      <div class="left-logo"><span class="material-symbols-outlined">
+        ramen_dining
+        </span>
+        <div class="name">
+          Home Chef
+        </div>
+      </div>
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input">
+        <button class="search-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="search-icon">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.35-6.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </button>
+    </div>
+      <div class="logs">
+        <a th:if="${userDetails == null}" href="/login">Login</a>
+		<a th:if="${userDetails != null}" href="/" th:text="'Ciao, ' + ${userDetails.username} + '!'"></a>
+        <button th:if="${userDetails == null}" onclick="location.href='/register'">Registrati</button>
+		<button th:if="${userDetails != null}" onclick="location.href='/logout'">Logout</button>
+      </div>
+    </div>
+    <div class="copertina">
+      <div class="descrizione">
+        <h2>Esplora e crea nuove ricette!</h2>
+        <div th:if="${userDetails == null}" ><p>Diventa anche tu uno chef!</p>
+          <button onclick="location.href='/register'">Registrati</button>
+        </div>
+		<div th:if="${userDetails != null}" ><p>Crea una nuova ricetta!</p>
+          <button onclick="location.href='/creaRicetta'">Crea</button>
+	  </div>
+      </div>
+      <div class="chef">
+        <img src="images/Chef_definitivo.png">
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

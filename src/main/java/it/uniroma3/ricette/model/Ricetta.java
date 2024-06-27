@@ -17,22 +17,25 @@ public class Ricetta {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 	
 	private String nome;
 	
 	private String descrizione;
 	
 	@ManyToOne
-	@JoinColumn(name = "autore_id")
+	@JoinColumn(name = "cuoco_id")
 	private Cuoco autore;
 	
 	@OneToMany
 	private List<Ingrediente> ingredienti;
 	
+	private String tempo;
+	
 	//FOTO
 	
 	@OneToMany
+	@JoinColumn(name = "ricetta_id")
 	private List<Recensione> recensioni;
 
 	public long getId() {
@@ -98,6 +101,14 @@ public class Ricetta {
 			return false;
 		Ricetta other = (Ricetta) obj;
 		return id == other.id;
+	}
+
+	public String getTempo() {
+		return tempo;
+	}
+
+	public void setTempo(String tempo) {
+		this.tempo = tempo;
 	}
 	
 	

@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+}
+
+
+.container{
+    margin-top: 20px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background-color: rgb(255, 245, 230);
+    border-radius: 40px 40px 0 0;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
+.form-container{
+    margin-top:50px;
+    display: flex;
+    flex-direction: row;
+    width:70%;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(255, 217, 171);
+    padding: 20px;
+    border-radius: 30px;
+    border: 1px solid;
+}
+
+
+
+.chef>img{
+    height: 20%;
+    max-height: 300px;
+}
+
+h4{
+    margin-bottom: 40px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+.descrizione>div{
+    margin-top: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.descrizione>div>button{
+    height: 20px;
+}
+
+.navbar{
+    display: flex;
+    width: 90%;
+    margin: 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.left-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    height: 50px;
+    flex-direction: row;
+}
+
+.name{
+    font-size: 1.9rem;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.left-logo .material-symbols-outlined {
+    font-size: 48px; 
+}
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 100%;
+    max-width: 500px;
+    width: 50%;
+}
+
+.search-input {
+    display: flex;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    width: 100%;
+}
+
+.search-button {
+    background-color: #ffa041;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    height: 100%;
+}
+
+.logs{
+    display: flex;
+    align-items: center;
+    font-size: larger;
+}
+
+button{
+    background-color: #ffa041;
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 50px 50px 50px 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    margin-left: 20px;
+    font-size: medium;
+}
+
+button:hover {
+    background-color: #ffba5f;
+    transition: ease 0.2s;
+}
+
+.logs>a {
+    text-decoration: none;
+}
+
+
+
+.logs>a:visited{
+    color: black;
+}
+
+.logs>a:hover{
+    color: gray;
+    transition: ease 0.2s;
+}
+
+.search-icon {
+    margin-right: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+.form>input{
+    width:100%;
+    max-width: 500px;
+    height: 50px;
+    margin: 10px 0 10px 0;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+.form>input::placeholder{
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.form>input:focus::placeholder {
+    transition: 0.2s ease;
+    color: transparent;
+}
+
+.form>input:focus{
+    border: 1px solid #ffa041;
+    outline: none;
+}
+
+.form>button{
+    width: 40%;
+    max-width: 200px;
+}
+
+textarea{
+    width:100%;
+    max-width: 500px;
+    height: 200px;
+    margin: 10px 0 10px 0;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+textarea::placeholder{
+    text-align: center;
+}
+
+textarea:focus{
+    border: 1px solid #ffa041;
+    outline: none;
+}
+
+textarea:focus::placeholder{
+    transition: 0.2s ease;
+    color: transparent;
+}
+
+.custom-file-upload {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    width:100%;
+}
+
+.custom-file-upload input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-file-upload label {
+    background-color: #ffa041;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer; 
+    font-size: 16px; 
+    display: inline-block;
+    margin-bottom: 20px;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+    
+}
+
